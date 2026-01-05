@@ -21,8 +21,8 @@ sleep_analysis_project/
 │ └── processed/
 │
 ├── notebooks/
-│ ├── 01_data_exploration.ipynb
-│ └── 02_analysis.ipynb
+│ ├── AI_data_exploration.ipynb
+│ └── AI_analysis.ipynb
 │
 ├── scripts/
 │ ├── data_cleaning.py
