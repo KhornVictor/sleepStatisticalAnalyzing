@@ -26,12 +26,10 @@ def median(data):
 
 def mode(data):
     frequency = {}
-    for value in data:
-        frequency[value] = frequency.get(value, 0) + 1
+    for value in data: frequency[value] = frequency.get(value, 0) + 1
     max_freq = max(frequency.values())
     modes = [key for key, freq in frequency.items() if freq == max_freq]
-    if len(modes) == len(frequency):
-        return None
+    if len(modes) == len(frequency): return None
     return modes
 
 def range(data):
