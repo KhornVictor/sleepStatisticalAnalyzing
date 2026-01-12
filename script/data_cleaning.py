@@ -16,7 +16,6 @@ df.rename(
         "Time in bed": "time_in_bed",
         "Wake up": "wake_up",
         "Sleep Notes": "sleep_notes",
-        "Heart rate": "heart_rate",
     },
     inplace=True,
 )
@@ -46,10 +45,8 @@ df["time_in_bed_min"] = df["time_in_bed"].apply(to_minutes)
 df["sleep_duration_min"] = df.apply(
     lambda row: sleep_duration_minutes(row["start"], row["end"]), axis=1
 )
-df["heart_rate"] = pd.to_numeric(df["heart_rate"], errors="coerce")
-df["heart_rate"].fillna(df["heart_rate"].median(), inplace=True)
 
-df = df[["start", "end", "time_in_bed", "heart_rate", "time_in_bed_min"]]
+df = df[["start", "end", "time_in_bed", "time_in_bed_min"]]
 
 df.to_csv(output_path, index=False)
 print(f"Data cleaned and saved to {output_path}")
